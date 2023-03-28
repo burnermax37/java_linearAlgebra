@@ -500,4 +500,30 @@ public class IntegerMatrix extends FieldMatrix<Integer> {
         }
         
     }
+    
+    
+    
+    /**Method to multiply one row of a matrix by an integer. 
+     @param index Index of row being multiplied
+     * @param scalar Integer by which row is multiplied
+     */
+    @Override
+    public void rowOp_multiply(int index, int scalar){
+        for(int i = 0; i < this.getColumns(); i++){
+            this.getElements()[index][i] *= scalar;
+        }
+    }
+    
+    
+    
+    /**Method to multiply one column of a matrix by an integer. 
+     @param index Index of column being multiplied
+     * @param scalar Integer by which column is multiplied
+     */
+    @Override
+    public void colOp_multiply(int index, int scalar){
+        for(int i = 0; i < this.getRows(); i++){
+            this.getElements()[i][index] *= scalar;
+        }
+    }
 }

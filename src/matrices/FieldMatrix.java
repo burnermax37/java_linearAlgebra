@@ -78,6 +78,18 @@ public abstract class FieldMatrix<V> extends Matrix<V> {
      * @throws matrices.NullMatrixException*/
     public abstract FieldMatrix scalarDivision(int scalar) throws NullMatrixException;
     
+    
+    /**Abstract method to multiply one row of a matrix by an integer. 
+     @param index Index of row being multiplied
+     * @param scalar Integer by which row is multiplied
+     */
+    public abstract void rowOp_multiply(int index, int scalar);
+    
+    /**Abstract method to multiply one column of a matrix by an integer. 
+     @param index Index of column being multiplied
+     * @param scalar Integer by which column is multiplied
+     */
+    public abstract void colOp_multiply(int index, int scalar);
 
     
 }
