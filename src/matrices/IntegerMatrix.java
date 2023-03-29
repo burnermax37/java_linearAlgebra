@@ -526,4 +526,28 @@ public class IntegerMatrix extends FieldMatrix<Integer> {
             this.getElements()[i][index] *= scalar;
         }
     }
+
+     /**Method to add one row of a matrix to another.
+     @param alpha Index of row being added to another
+     @param beta Index of row to which other row is added
+     @param scalar Integer value by which alpha row is multiplied before adding
+     */
+    @Override
+    public void rowOp_add(int alpha, int beta, int scalar) {
+        for(int i = 0; i < this.getColumns(); i++){
+            this.getElements()[beta][i] += this.getElements()[alpha][i] * scalar;
+        }
+    }
+    
+    /**Method to add one column of a matrix to another.
+    @param alpha Index of column being added to another
+    @param beta Index of column to which other column is added
+    @param scalar Integer value by which alpha column is multiplied before adding
+    */
+    @Override
+    public void colOp_add(int alpha, int beta, int scalar){
+        for(int i = 0; i < this.getRows(); i++){
+            this.getElements()[i][beta] += this.getElements()[i][alpha] * scalar;
+        }
+    }
 }

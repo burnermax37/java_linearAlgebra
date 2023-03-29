@@ -90,6 +90,21 @@ public abstract class FieldMatrix<V> extends Matrix<V> {
      * @param scalar Integer by which column is multiplied
      */
     public abstract void colOp_multiply(int index, int scalar);
+    
+    /**Abstract method to add one row of a matrix to another.
+     @param alpha Index of row being added to another
+     @param beta Index of row to which other row is added
+     @param scalar Integer value by which alpha row is multiplied before adding
+     */
+    public abstract void rowOp_add(int alpha, int beta, int scalar);
+    
+    
+    /**Abstract method to add one column of a matrix to another.
+    @param alpha Index of column being added to another
+    @param beta Index of column to which other column is added
+    @param scalar Integer value by which alpha column is multiplied before adding
+    */
+    public abstract void colOp_add(int alpha, int beta, int scalar);
 
     
 }
